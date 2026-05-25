@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-sans:
+    -apply-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --radius: 6px;
+  --transition: 0.2s ease;
+}
+
+/* Theme variables */
+/* ── Theme Variables ──────────────────────────────────────── */
+.app.light {
+  --bg: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --bg-tertiary: #eaeef2;
+  --border: #d0d7de;
+  --text: #1f2328;
+  --text-muted: #656d76;
+  --accent: #0969da;
+  --header-bg: #24292f;
+  --header-text: #ffffff;
+  --toolbar-bg: #f6f8fa;
+  --toolbar-btn: #24292f;
+  --toolbar-hover: #0969da;
+  --editor-bg: #ffffff;
+  --editor-text: #1f2328;
+  --preview-bg: #ffffff;
+  --sep: #d0d7de;
+  --pane-header: #f6f8fa;
+  --scrollbar: #c8ccd0;
+  --code-bg: #f6f8fa;
+  --blockquote-border: #0969da;
+  --blockquote-bg: #f0f7ff;
+  --link: #0969da;
+}
+
+.app.dark {
+  --bg: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #7d8590;
+  --accent: #58a6ff;
+  --header-bg: #161b22;
+  --header-text: #e6edf3;
+  --toolbar-bg: #161b22;
+  --toolbar-btn: #e6edf3;
+  --toolbar-hover: #58a6ff;
+  --editor-bg: #0d1117;
+  --editor-text: #e6edf3;
+  --preview-bg: #0d1117;
+  --sep: #30363d;
+  --pane-header: #161b22;
+  --scrollbar: #30363d;
+  --code-bg: #161b22;
+  --blockquote-border: #58a6ff;
+  --blockquote-bg: #111b27;
+  --link: #58a6ff;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 52px;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* Toolbar styling starts */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 12px;
+  background: var(--toolbar-bg);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--toolbar-btn);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.toolbar-btn:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--border);
+  color: var(--toolbar-hover);
+}
+
+.toolbar-btn:active {
+  transform: scale(0.95);
+}
+
+.toolbar-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  margin: 0 4px;
+}
+/* Toolbar styling ends */

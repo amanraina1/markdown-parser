@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import Toolbar from "./components/Toolbar";
+import "./App.css";
 
 const DEFAULT_CONTENT = `hello`;
 
